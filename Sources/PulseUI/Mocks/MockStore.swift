@@ -22,7 +22,7 @@ extension LoggerStore {
     }
 }
 
-extension LoggerStore {
+public extension LoggerStore {
     static let demo: LoggerStore = {
         let store = LoggerStore.shared
         store.startPopulating()
