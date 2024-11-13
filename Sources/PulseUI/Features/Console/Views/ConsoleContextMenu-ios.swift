@@ -36,11 +36,6 @@ struct ConsoleContextMenu: View {
                 }
             }
             Section {
-                if !UserDefaults.standard.bool(forKey: "pulse-disable-support-prompts") {
-                    Button(action: buttonGetPulseProTapped) {
-                        Label("Get Pulse Pro", systemImage: "link")
-                    }
-                }
                 Button(action: buttonSendFeedbackTapped) {
                     Label("Report Issue", systemImage: "envelope")
                 }
