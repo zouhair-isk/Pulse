@@ -108,6 +108,34 @@ private func _asyncPopulateStore(_ store: LoggerStore) async {
 
         logger(named: "analytics")
                 .log(level: .debug, "Will navigate to Dashboard")
+        
+        // Core
+        logger(named: "Core")
+                .log(level: .debug, "Contentsquare SDK v 4.39.4 started")
+        logger(named: "Core")
+            .log(level: .warning, "Contentsquare SDK configuration applied from cache")
+        logger(named: "Core")
+            .log(level: .debug, "Telemetry started")
+        
+        // Analytics
+        logger(named: "analytics")
+                .log(level: .debug, "Event collection started")
+        logger(named: "analytics")
+                .log(level: .debug, "Event collection started")
+        
+        // SR
+        logger(named: "Session Replay")
+                .log(level: .debug, "Session Replay started")
+        await Task.sleep(milliseconds: 800)
+        logger(named: "Session Replay")
+                .log(level: .debug, "Recording quality set of 90%")
+        await Task.sleep(milliseconds: 500)
+        logger(named: "Session Replay")
+                .log(level: .debug, "Recording rate set to 12%")
+        
+        // PII
+        logger(named: "PII")
+            .log(level: .critical, "Overlay view might leak PIIs")
     }
 
     for task in MockTask.allTasks {

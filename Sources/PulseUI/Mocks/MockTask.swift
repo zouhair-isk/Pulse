@@ -254,7 +254,7 @@ private let mockProfileFailureResponseBody = """
 
 // MARK: - Octocat (GET, Image)
 
-private let mockOctocatOriginalRequest = URLRequest(url: "https://github.com/octocat.png", headers: [
+private let mockOctocatOriginalRequest = URLRequest(url: "https://app.contentsqaure.com/replay", headers: [
     "Accept": "image/any"
 ])
 
@@ -264,9 +264,9 @@ private let mockOctocatCurrentRequest = mockOctocatOriginalRequest.adding(header
     "Accept-Language": "en-us"
 ])
 
-private let mockOctocatNotModifiedResponse = HTTPURLResponse(url: "https://github.com/octocat.png", statusCode: 304)
+private let mockOctocatNotModifiedResponse = HTTPURLResponse(url: "https://app.contentsqaure.com/replay", statusCode: 304)
 
-private let mockOctocatResponse = HTTPURLResponse(url: "https://github.com/octocat.png", statusCode: 200, headers: [
+private let mockOctocatResponse = HTTPURLResponse(url: "https://app.contentsqaure.com/replay", statusCode: 200, headers: [
     "Content-Length": "11048",
     "Content-Type": "image/png",
     "Cache-Control": "public, max-age=3600",
@@ -280,7 +280,7 @@ private let mockOcotocatResponseBody = Data(base64Encoded: "/9j/4AAQSkZJRgABAQAA
 
 // MARK: - Repos (GET, Success)
 
-private let mockReposOriginalRequest = URLRequest(url: "https://github.com/repos")
+private let mockReposOriginalRequest = URLRequest(url: "https://app.contentsqaure.com/")
 
 private let mockReposCurrentRequest = mockReposOriginalRequest.adding(headers: [
     "User-Agent": "Pulse Demo/2.0",
@@ -289,7 +289,7 @@ private let mockReposCurrentRequest = mockReposOriginalRequest.adding(headers: [
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
 ])
 
-private let mockReposResponse = HTTPURLResponse(url: "https://github.com/repos", statusCode: 200, headers: [
+private let mockReposResponse = HTTPURLResponse(url: "https://app.contentsqaure.com/", statusCode: 200, headers: [
     "Content-Length": "165061",
     "Content-Type": "application/json; charset=utf-8",
     "Cache-Control": "no-store",
@@ -303,7 +303,7 @@ private let mockReposBody = Bundle.main.url(forResource: "repos", withExtension:
 
 // MARK: - /CreateAPI (GET, redirect)
 
-private let mockCreateAPIOriginalRequest = URLRequest(url: "https://github.com/CreateAPI/Get")
+private let mockCreateAPIOriginalRequest = URLRequest(url: "https://app.contentsqaure.com/snapshot")
 
 private let mockCreateAPICurrentRequest = mockCreateAPIOriginalRequest.adding(headers: [
     "User-Agent": "Pulse Demo/2.0",
@@ -312,14 +312,14 @@ private let mockCreateAPICurrentRequest = mockCreateAPIOriginalRequest.adding(he
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
 ])
 
-private let mockCreateAPIRedirectRequest = URLRequest(url: "https://github.com/kean/Get").adding(headers: [
+private let mockCreateAPIRedirectRequest = URLRequest(url: "https://app.contentsqaure.com/snapshot").adding(headers: [
     "User-Agent": "Pulse Demo/2.0",
     "Accept-Encoding": "gzip",
     "Accept-Language": "en-us",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
 ])
 
-private let mockCreateaAPIRedirectResponse = HTTPURLResponse(url: "https://github.com/CreateAPI/Get", statusCode: 301, headers: [
+private let mockCreateaAPIRedirectResponse = HTTPURLResponse(url: "https://app.contentsqaure.com/snapshot", statusCode: 301, headers: [
     "Content-Type": "text/html; charset=utf-8",
     "Location": "https://github.com/kean/Get",
     "Cache-Control": "no-cache",
@@ -327,13 +327,13 @@ private let mockCreateaAPIRedirectResponse = HTTPURLResponse(url: "https://githu
     "Server": "GitHub.com"
 ])
 
-private let mockCreateaAPIResponse = HTTPURLResponse(url: "https://github.com/kean/Get", statusCode: 200, headers: [
+private let mockCreateaAPIResponse = HTTPURLResponse(url: "https://app.contentsqaure.com/snapshot", statusCode: 200, headers: [
     "Content-Type": "text/html; charset=utf-8",
     "Content-Length": "90",
     "Cache-Control": "no-store",
 ])
 
-private let mockCreateAPIResponseNotChanged = HTTPURLResponse(url: "https://github.com/kean/Get", statusCode: 304, headers: [
+private let mockCreateAPIResponseNotChanged = HTTPURLResponse(url: "https://app.contentsqaure.com/snapshot", statusCode: 304, headers: [
     "Content-Length": "0",
     "Cache-Control": "max-age=0, private, must-revalidate",
     "Server": "GitHub.com"
@@ -350,7 +350,7 @@ private let mockCreateaAPIBody = """
 // MARK: - PATCH
 
 private let mockPatchRepoOriginalRequest: URLRequest = {
-    var request = URLRequest(url: "https://github.com/repos/kean/Nuke", method: "PATCH")
+    var request = URLRequest(url: "https://staging.contentsqaure.com/config?", method: "PATCH")
     request.httpBody = """
     name=ImageKit&description=Image%20Loading%Framework&private=false
     """.data(using: .utf8)
@@ -365,7 +365,7 @@ private let mockPatchRepoCurrentRequest = mockPatchRepoOriginalRequest.adding(he
     "Accept": "application/vnd.github+json"
 ])
 
-private let mockPatchRepoResponse = HTTPURLResponse(url: "https://github.com/repos/kean/Nuke", statusCode: 200, headers: [
+private let mockPatchRepoResponse = HTTPURLResponse(url: "https://staging.contentsqaure.com/pii", statusCode: 200, headers: [
     "Content-Length": "165061",
     "Content-Type": "application/json; charset=utf-8",
     "Cache-Control": "no-store",
