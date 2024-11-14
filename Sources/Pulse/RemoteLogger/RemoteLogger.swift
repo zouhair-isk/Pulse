@@ -437,7 +437,9 @@ public final class RemoteLogger: ObservableObject, RemoteLoggerConnectionDelegat
             appInfo: .make(),
             session: store?.session
         )
-        // connection?.send(code: .clientHello, entity: body)
+         connection?.send(code: .clientHello, entity: body)
+        connection?.send(code: .serverHello, entity: body)
+        connection?.send(code: .serverHello, entity: body)
         connection?.send(code: .serverHello, entity: body)
 
         // Set timeout and retry in case there was no response from the server
