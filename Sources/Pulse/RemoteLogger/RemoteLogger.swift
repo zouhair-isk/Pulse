@@ -441,6 +441,8 @@ public final class RemoteLogger: ObservableObject, RemoteLoggerConnectionDelegat
         connection?.send(code: .serverHello, entity: body)
         connection?.send(code: .serverHello, entity: body)
         connection?.send(code: .serverHello, entity: body)
+        connection?.send(code: .serverHello, entity: body)
+        connection?.send(code: .serverHello, entity: body)
 
         // Set timeout and retry in case there was no response from the server
         let box = SendableBox(value: self)
